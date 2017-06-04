@@ -1,0 +1,14 @@
+version: "2"
+services:
+  public:
+    build: .
+    ports:
+      - "1337:1337"
+    volumes:
+      - .:/www
+      - /www/node_modules
+    tty: true
+    expose:
+      - "1337"
+    environment:
+      - PORT=1337

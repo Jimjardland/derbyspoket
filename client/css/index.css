@@ -1,0 +1,16 @@
+.mats {
+    width:100vw;
+    height:100vh;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../pic/mats.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}
+
+.cssisannyoing {
+    padding-top: 200px;
+}
