@@ -13,7 +13,9 @@ const page = (res, page) => res.sendFile(path.resolve(`client/${page}.html`))
 
 app.get('/', (req, res) => page(res, 'index'))
 
-const difVictory = Math.abs(moment('2007-08-13').diff(moment(), 'days')) //hårdkoda, lär ju orka annat. 2007-08-13 knasigt länge sen
+function difVictory() {
+  return Math.abs(moment('2007-08-13').diff(moment(), 'days')) //hårdkoda, lär ju orka annat. 2007-08-13 knasigt länge sen
+}
 
 const cases = ['Marie Picasso vann Idol', 
                 'Göran Persson avgick som Socialdemokraternas partiledare',
@@ -29,7 +31,7 @@ const cases = ['Marie Picasso vann Idol',
 
 const ranomizeCase = () => cases[Math.floor(Math.random()*cases.length)]
 const retVal = () => {
-    return { 'case': ranomizeCase(), 'daysSince': difVictory}
+    return { 'case': ranomizeCase(), 'daysSince': difVictory()}
 }
 
 router.get('/daysSince', (req, res) => res.json(retVal()))
